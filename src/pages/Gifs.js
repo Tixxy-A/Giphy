@@ -18,7 +18,6 @@ const GifPage = () => {
   const [readMore, setReadMore] = useState(false);
 
   const { favorite, gf, } = useContext(GifContext);
-  const title="";
   //console.log(gif.id);
   useEffect(() => {
     if (!contentType.includes(type)) {
@@ -34,7 +33,6 @@ const GifPage = () => {
       setGif(data);
       setRelatedGifs(related);
       setShow(true);
-      title=data.title.split("by")[0];
       }catch(e){
         console.log(e);
       }
@@ -104,7 +102,7 @@ const GifPage = () => {
           </span>
           <div className="flex items-center text-sm font-bold gap-1">
             <HiOutlineExternalLink size={25} />
-            <a href={gif.source} target="_blank" className="truncate">
+            <a href={gif.source} target="_blank" rel="noreferrer" className="truncate">
               {gif.source}
             </a>
           </div>
