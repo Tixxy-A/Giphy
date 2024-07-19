@@ -4,38 +4,42 @@ import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import Search from "./pages/Search";
 import Favriotes from "./pages/Favriotes";
+import { GifProvider } from "./Context/Context";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    element:<Layout/>,
-    children:[
+    element: <Layout />,
+    children: [
       {
         path: "/",
-        element:<Home/>
+        element: <Home />,
       },
+      
       {
         path: "/:category",
-        element:<Category/>
+        element: <Category />,
       },
       {
         path: "/search/:query",
-        element:<Search />
+        element: <Search />,
       },
       {
         path: "/:type/:slug",
-        element:<Gifs />
+        element: <Gifs />,
       },
       {
         path: "/favorite",
-        element:<Favriotes />
+        element: <Favriotes />,
       },
-    ]
-  }
-])
+    ],
+  },
+]);
 function App() {
   return (
-   <RouterProvider router={router}/>
+    <GifProvider>
+      <RouterProvider router={router} />
+    </GifProvider>
   );
 }
 
