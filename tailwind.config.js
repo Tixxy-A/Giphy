@@ -5,6 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily:{
+      cursive:["Lobster", 'cursive'],
+      crazy:["Bebas Neue", ],
+      simple:["kanit", ],
+      design:["Kalam", 'cursive'],
+    },
 
   },
   plugins: [],
